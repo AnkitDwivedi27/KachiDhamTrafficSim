@@ -1,0 +1,333 @@
+/* RoutePlanner.css */
+.route-planner-container {
+  background-color: #f5f8fa;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.route-planner-header {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e1e4e8;
+}
+
+.route-planner-header h2 {
+  font-size: 24px;
+  margin: 0 0 10px 0;
+  color: #24292e;
+}
+
+.route-planner-header p {
+  color: #586069;
+  margin: 0;
+}
+
+.route-planner-content {
+  display: flex;
+  gap: 20px;
+}
+
+.route-planner-form-container {
+  flex: 1;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.route-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-weight: 500;
+  color: #24292e;
+}
+
+.form-group select,
+.form-group input {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
+
+.form-actions {
+  margin-top: 10px;
+}
+
+.plan-route-btn {
+  padding: 12px;
+  border-radius: 4px;
+  border: none;
+  background-color: #0366d6;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.plan-route-btn:hover {
+  background-color: #0353ad;
+}
+
+.plan-route-btn:disabled {
+  background-color: #e1e4e8;
+  color: #959da5;
+  cursor: not-allowed;
+}
+
+.route-options-container {
+  flex: 2;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.route-options-container h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #24292e;
+}
+
+.route-options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.route-option {
+  padding: 15px;
+  border-radius: 6px;
+  border: 1px solid #e1e4e8;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.route-option:hover {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.route-option.selected {
+  border-color: #0366d6;
+  background-color: #f1f8ff;
+}
+
+.route-name {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #24292e;
+}
+
+.route-info {
+  display: flex;
+  gap: 15px;
+}
+
+.route-distance,
+.route-duration {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  color: #586069;
+}
+
+.route-traffic {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.route-traffic.heavy {
+  background-color: #fce8e6;
+  color: #c5221f;
+}
+
+.route-traffic.moderate {
+  background-color: #fef7e0;
+  color: #b06000;
+}
+
+.route-traffic.light {
+  background-color: #e6f4ea;
+  color: #137333;
+}
+
+.error-message {
+  background-color: #fce8e6;
+  color: #c5221f;
+  padding: 10px;
+  border-radius: 4px;
+  margin-top: 15px;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 992px) {
+  .route-planner-content {
+    flex-direction: column;
+  }
+  
+  .route-planner-form-container,
+  .route-options-container {
+    width: 100%;
+  }
+  
+  .route-options-container {
+    margin-top: 20px;
+  }
+}
+
+/* Wait time breakdown */
+.wait-time-breakdown {
+    margin: 30px 0;
+  }
+  
+  .wait-time-breakdown h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #24292e;
+  }
+  
+  .wait-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+  }
+  
+  .wait-item {
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .wait-item.open {
+    border-top: 3px solid #2cba00;
+  }
+  
+  .wait-item.restricted {
+    border-top: 3px solid #f5a70a;
+  }
+  
+  .wait-item.closed {
+    border-top: 3px solid #e63946;
+  }
+  
+  .wait-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .wait-gate-name {
+    font-weight: 600;
+    font-size: 16px;
+    color: #24292e;
+  }
+  
+  .wait-status {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 8px;
+    border-radius: 12px;
+  }
+  
+  .wait-status.open {
+    background-color: #2cba00;
+    color: white;
+  }
+  
+  .wait-status.restricted {
+    background-color: #f5a70a;
+    color: white;
+  }
+  
+  .wait-status.closed {
+    background-color: #e63946;
+    color: white;
+  }
+  
+  .wait-item-body {
+    padding: 15px;
+  }
+  
+  .wait-item-stat {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+  
+  .wait-stat-label {
+    color: #586069;
+  }
+  
+  .wait-stat-value {
+    font-weight: 500;
+    color: #24292e;
+  }
+  
+  .wait-display {
+    margin-top: 15px;
+    text-align: center;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    border: 1px dashed #e1e4e8;
+  }
+  
+  .wait-display-label {
+    font-size: 13px;
+    color: #586069;
+    margin-bottom: 5px;
+  }
+  
+  .wait-display-time {
+    font-size: 24px;
+    font-weight: 600;
+  }
+  
+  .wait-minutes {
+    color: #24292e;
+  }
+  
+  .wait-unit {
+    font-size: 14px;
+    color: #586069;
+    margin-left: 5px;
+  }
+  
+  .indefinite {
+    color: #e63946;
+  }
+  
+  .overview-card.total-waiting {
+    background-color: #fff8e6;
+    border-left: 4px solid #f5a70a;
+  }
+  
+  /* Active entry points visualization */
+  .active-entry-points {
+    margin-top: 20px;
+  }
+  
+  /* Continue with the rest of the CSS */

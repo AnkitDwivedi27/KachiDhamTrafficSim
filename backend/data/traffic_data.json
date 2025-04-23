@@ -1,0 +1,151 @@
+{
+  "roads": [
+    {
+      "id": "road-1",
+      "name": "Main Street",
+      "length": 1.2,
+      "speedLimit": 50,
+      "lanes": 3,
+      "vehicleCount": 45,
+      "congestionLevel": "medium"
+    },
+    {
+      "id": "road-2",
+      "name": "River Road",
+      "length": 2.5,
+      "speedLimit": 60,
+      "lanes": 2,
+      "vehicleCount": 78,
+      "congestionLevel": "high"
+    },
+    {
+      "id": "road-3",
+      "name": "Temple Avenue",
+      "length": 0.8,
+      "speedLimit": 40,
+      "lanes": 2,
+      "vehicleCount": 23,
+      "congestionLevel": "low"
+    },
+    {
+      "id": "road-4",
+      "name": "Market Street",
+      "length": 1.5,
+      "speedLimit": 30,
+      "lanes": 2,
+      "vehicleCount": 96,
+      "congestionLevel": "severe"
+    },
+    {
+      "id": "road-5",
+      "name": "Pilgrimage Path",
+      "length": 3.2,
+      "speedLimit": 60,
+      "lanes": 4,
+      "vehicleCount": 120,
+      "congestionLevel": "medium"
+    }
+  ],
+  "intersections": [
+    {
+      "id": "intersection-1",
+      "location": { "x": 100, "y": 150 },
+      "hasTrafficLight": true,
+      "currentPhase": "green",
+      "connectedRoads": ["road-1", "road-2"]
+    },
+    {
+      "id": "intersection-2",
+      "location": { "x": 200, "y": 300 },
+      "hasTrafficLight": true,
+      "currentPhase": "red",
+      "connectedRoads": ["road-2", "road-3", "road-4"]
+    },
+    {
+      "id": "intersection-3",
+      "location": { "x": 350, "y": 150 },
+      "hasTrafficLight": true,
+      "currentPhase": "yellow",
+      "connectedRoads": ["road-1", "road-5"]
+    },
+    {
+      "id": "intersection-4",
+      "location": { "x": 450, "y": 250 },
+      "hasTrafficLight": false,
+      "connectedRoads": ["road-3", "road-5"]
+    }
+  ],
+  "trafficEvents": [
+    {
+      "id": "event-1",
+      "type": "ROAD_WORK",
+      "description": "Road resurfacing in progress",
+      "location": { "x": 150, "y": 200 },
+      "severity": "MEDIUM",
+      "startTime": "2023-07-01T08:00:00Z",
+      "endTime": "2023-07-10T18:00:00Z",
+      "affectedRoadIds": ["road-2"]
+    },
+    {
+      "id": "event-2",
+      "type": "ACCIDENT",
+      "description": "Multi-vehicle collision",
+      "location": { "x": 320, "y": 180 },
+      "severity": "HIGH",
+      "startTime": "2023-07-05T14:30:00Z",
+      "endTime": null,
+      "affectedRoadIds": ["road-4"]
+    },
+    {
+      "id": "event-3",
+      "type": "SPECIAL_EVENT",
+      "description": "Temple festival",
+      "location": { "x": 250, "y": 300 },
+      "severity": "LOW",
+      "startTime": "2023-07-15T09:00:00Z",
+      "endTime": "2023-07-17T22:00:00Z",
+      "affectedRoadIds": ["road-3", "road-5"]
+    }
+  ],
+  "zones": [
+    {
+      "id": "zone-1",
+      "name": "Temple District",
+      "boundaries": [
+        { "x": 100, "y": 100 },
+        { "x": 300, "y": 100 },
+        { "x": 300, "y": 300 },
+        { "x": 100, "y": 300 }
+      ],
+      "throttleLevel": 0.3,
+      "maxCapacity": 500,
+      "currentVehicleCount": 320
+    },
+    {
+      "id": "zone-2",
+      "name": "Market Area",
+      "boundaries": [
+        { "x": 350, "y": 150 },
+        { "x": 550, "y": 150 },
+        { "x": 550, "y": 350 },
+        { "x": 350, "y": 350 }
+      ],
+      "throttleLevel": 0.5,
+      "maxCapacity": 300,
+      "currentVehicleCount": 280
+    },
+    {
+      "id": "zone-3",
+      "name": "Residential Area",
+      "boundaries": [
+        { "x": 100, "y": 350 },
+        { "x": 300, "y": 350 },
+        { "x": 300, "y": 550 },
+        { "x": 100, "y": 550 }
+      ],
+      "throttleLevel": 0.1,
+      "maxCapacity": 200,
+      "currentVehicleCount": 95
+    }
+  ]
+} 

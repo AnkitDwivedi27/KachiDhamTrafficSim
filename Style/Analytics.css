@@ -1,0 +1,140 @@
+.analytics-dashboard {
+  padding: 20px;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+.analytics-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.analytics-header h2 {
+  color: #333;
+  margin: 0;
+}
+
+.time-range-selector select {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.analytics-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.analytics-card h3 {
+  color: #333;
+  margin: 0 0 15px 0;
+  font-size: 18px;
+}
+
+.peak-hours-chart,
+.congestion-patterns,
+.event-trends,
+.road-utilization {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.peak-hour-item,
+.pattern-item,
+.trend-item,
+.utilization-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+}
+
+.traffic-level,
+.severity,
+.impact {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+}
+
+.traffic-level.high,
+.severity.high,
+.impact.high {
+  background-color: #f44336;
+}
+
+.traffic-level.medium,
+.severity.medium,
+.impact.medium {
+  background-color: #ff9800;
+}
+
+.traffic-level.low,
+.severity.low,
+.impact.low {
+  background-color: #4caf50;
+}
+
+.utilization-bar {
+  flex: 1;
+  height: 8px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.utilization-fill {
+  height: 100%;
+  background-color: #2196f3;
+  transition: width 0.3s ease;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+}
+
+.error {
+  text-align: center;
+  padding: 40px;
+  color: #f44336;
+}
+
+@media (max-width: 768px) {
+  .analytics-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .time-range-selector {
+    width: 100%;
+  }
+
+  .time-range-selector select {
+    width: 100%;
+  }
+
+  .analytics-grid {
+    grid-template-columns: 1fr;
+  }
+} 
